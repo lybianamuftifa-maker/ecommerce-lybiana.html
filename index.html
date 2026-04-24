@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Liyaa's Coffee</title>
+
+    <style>
+
+        {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body{
+            background-color: rgb(245, 241, 235);
+            color: rgb(51, 51, 51);
+        }
+
+        header{
+            background-color: rgb(75, 46, 46);
+            color: rgb(255, 255, 255);
+            text-align: center;
+            padding: 20px;
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        nav{
+            background-color: rgb(111, 78, 55);
+            text-align: center;
+            padding: 15px;
+        }
+
+        nav a{
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        .hero{
+            background-image: url("https://images.unsplash.com/photo-1509042239860-f550ce710b93");
+            background-size: cover;
+            background-position: center;
+            height: 420px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: rgb(255, 255, 255);
+            text-align: center;
+        }
+
+        .hero h1{
+            font-size: 45px;
+            margin-bottom: 10px;
+        }
+
+        .hero p{
+            font-size: 20px;
+        }
+
+        .cart{
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: rgb(255, 255, 255);
+            padding: 12px 18px;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+            font-weight: bold;
+        }
+
+        .container{
+            padding: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+            gap: 25px;
+        }
+
+        .card{
+            background-color: rgb(255, 255, 255);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .card img{
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .card h3{
+            margin: 15px 0 10px;
+        }
+
+        .price{
+            color: rgb(111, 78, 55);
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        button{
+            background-color: rgb(111, 78, 55);
+            color: rgb(255, 255, 255);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover{
+            background-color: rgb(75, 46, 46);
+        }
+
+        .contact{
+            background-color: rgb(255, 255, 255);
+            margin: 30px;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            line-height: 2;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        footer{
+            background-color: rgb(75, 46, 46);
+            color: rgb(255, 255, 255);
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        ☕ Liyaa's Coffee
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Menu</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+
+   <section class="hero">
+    <h1>Ngopi Dulu, Biar Ngga nge-lag</h1>
+    <p>Upgrade mood lo tiap hari</p>
+</section>
+
+<style>
+.hero h1{
+    font-size:23px;
+    margin: bottom 10px;px;
+}
+
+.hero p{
+    font: size px -18px;;
+}
+</style>
+
+    <div class="cart">
+        🛒 Keranjang: <span id="cart">0</span>
+    </div>
+
+    <section class="container">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1611564494260-6f21b80af7ea?q=80&w=1113&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+            <h3>Latte</h3>
+            <p class="price">Rp 23.000</p>
+            <button onclick="addCart()">Beli</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1667127619186-67800a0c4cc1?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+            <h3>Cappuccino</h3>
+            <p class="price">Rp 23.000</p>
+            <button onclick="addCart()">Beli</button>
+        </div>
+
+        <div class="card">
+            <img src="https://plus.unsplash.com/premium_photo-1675435644687-562e8042b9db?q=80&w=749&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+            <h3>Espresso</h3>
+            <p class="price">Rp 18.000</p>
+            <button onclick="addCart()">Beli</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1644131872721-36ab201b122e?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+            <h3>Mocha</h3>
+            <p class="price">Rp 25.000</p>
+            <button onclick="addCart()">Beli</button>
+        </div>
+
+    </section>
+
+    <section class="contact">
+        <h2>Contact Us</h2>
+        <p>📞 089607039881</p>
+        <p>📧 lybianamuftifa@gmail.com</p>
+    </section>
+
+    <footer>
+        © 2026 Liyaa's Coffee
+    </footer>
+
+    <script>
+
+        let total = 0;
+
+        function addCart(){
+            total++;
+            document.getElementById("cart").innerText = total;
+            alert("Produk berhasil ditambahkan!");
+        }
+
+    </script>
+
+</body>
+
+</html>
